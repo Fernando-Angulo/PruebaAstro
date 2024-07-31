@@ -1,8 +1,9 @@
 ---
 import '../styles/global.css';
-import Header from '../components/header.astro';
 import Footer from '../components/footer.astro';
+import Header from '../components/header.astro';
 import Hamburger from '../components/Hamburger.astro';
+const {pageTitle} = Astro.props;
 ---
 
 <html lang="en">
@@ -11,24 +12,19 @@ import Hamburger from '../components/Hamburger.astro';
 		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
 		<meta name="viewport" content="width=device-width" />
 		<meta name="generator" content={Astro.generator} />
-		<title>Astro</title>
+		<title>{pageTitle}</title>
 	</head>
 	<body>
 		<Hamburger />
 		<Header />
-		<h1>Bienvenido al nuevo blog</h1>
-        <p>Aquí encontrarás información relacionada a lo que te apasiona</p>
-
-        <ul>
-            <li><a href="/posts/post-1">Primera entrada</a></li>
-            <li><a href="/posts/post-2/">Publicación 2</a></li>
-            <li><a href="/posts/post-3/">Publicación 3</a></li>
-        </ul>
+		<h1>Hola! Soy tu primer sitio en Astroooooooo</h1>
+        <slot />
 	</body>
 	<footer>
 		<Footer />
 	</footer>
 	<script>
-		import "../scripts/menu.js";
+		import "../scripts/menu";
 	</script>
+
 </html>
